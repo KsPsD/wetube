@@ -9,7 +9,7 @@ export const search = (req,res) => {
     } = req;
     console.log(searchingBy)
     // const searchingBy = req.query.term; 이건 옛날 방식 ㅇㅇ 위에꺼가 더 최신
-    res.render("search",{'pageTitle':"search",searchingBy});
+    res.render("search",{'pageTitle':"search",searchingBy,videos});
 }
 
 

@@ -1,7 +1,11 @@
 extends layouts/main.pug
-
+include mixins/videoBlock
 
 block content
     .videos
-        each video i videos
-            h1=video.title
+        each item in videos
+            +videoBlock({
+                title:item.title,
+                views:item.views,
+                videoFile:item.videoFile,
+            })
