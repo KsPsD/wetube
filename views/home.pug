@@ -3,4 +3,5 @@ extends layouts/main.pug
 
 block content
     .videos
-        h1 Video
+        each video i videos
+            h1=video.title
