@@ -22,7 +22,7 @@ const VideoSchema = new mongoose.Schema({
         default:Date.now
     },
     // comments:[{type:mongoose.Schema.Types.ObjectId,
-    //     ref:"Video"//이렇게 비디오에서 커멘트 id를 리스트로 받거나
+    //     ref:"Comment"//이렇게 비디오에서 커멘트 id를 리스트로 받거나
     // }]
 
 })
