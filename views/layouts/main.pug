@@ -3,8 +3,9 @@ html
     head
         script(src="https://kit.fontawesome.com/9996bbd1d6.js")
         title #{pageTitle} | #{siteName}
+        link(rel="stylesheet", href="/static/style.css")
     body
         include ../partials/header
         block content
         include ../partials/footer
-        
+        script(src="/static/main.js")
