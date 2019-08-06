@@ -11,7 +11,10 @@ import {
   login,
   logout,
   githubLogin,
-  postGithubLogIn
+  postGithubLogIn,
+  getMe,
+  postGoogleLogIn,
+  googleLogin
 } from "../controllers/userController";
 const globalRouter = express.Router();
 
@@ -26,10 +29,18 @@ globalRouter.get(routes.logout, onlyPrivate, logout);
 globalRouter.get(routes.search, search);
 
 globalRouter.get(routes.github, githubLogin);
-
 globalRouter.get(
   routes.githubCallback,
   passport.authenticate("github", { failureRedirect: "/login" }),
   postGithubLogIn
 );
+
+globalRouter.get(routes.google, googleLogin);
+globalRouter.get(
+  routes.googleCallback,
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  postGoogleLogIn
+);
+
+globalRouter.get(routes.me, getMe);
 export default globalRouter;

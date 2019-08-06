@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { userDetail } from "../controllers/userController";
 
 const VideoSchema = new mongoose.Schema({
   fileUrl: {
@@ -23,7 +24,11 @@ const VideoSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "Comment" // 이렇게 비디오에서 커멘트 id를 리스트로 받거나
     }
-  ]
+  ],
+  creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  }
 });
 
 const model = mongoose.model("Video", VideoSchema);
