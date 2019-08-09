@@ -29,6 +29,13 @@ const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
 
+// API
+
+const API = "/api";
+const REGISTER_VIEW = "/:id/view";
+const ADD_COMMENT = "/:id/comment";
+const DELETE_COMMENT = "/:id/delComment/:commentId";
+
 const routes = {
   home: HOME,
   join: JOIN,
@@ -63,7 +70,7 @@ const routes = {
   },
   deleteVideo: id => {
     if (id) {
-      return `/videos/${id}/delete`;
+      return `/videos/${id}/delComment`;
     } else {
       return DELETE_VIDEO;
     }
@@ -73,7 +80,12 @@ const routes = {
   githubCallback: GITHUB_CALLBACK,
   me: ME,
   google: GOOGLE,
-  googleCallback: GOOGLE_CALLBACK
+  googleCallback: GOOGLE_CALLBACK,
+
+  api: API,
+  registerView: REGISTER_VIEW,
+  addComment: ADD_COMMENT,
+  deleteComment: DELETE_COMMENT
 };
 
 export default routes;
